@@ -1,0 +1,12 @@
+//-
+//- HEADER
+//-----------------------------------
+header.header(
+  ui-view="header"
+  ng-class="{ '-animate-off': !userStatus.logged }")
+//-
+//- CONTAINER
+//-----------------------------------
+section.container(
+  ui-view=""
+  ng-class="{ '-loading': userStatus.logging }")

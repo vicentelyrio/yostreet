@@ -1,0 +1,153 @@
+//=====================================
+// FLEX
+// http://css-tricks.com/snippets/css/a-guide-to-flexbox/
+//=====================================
+
+// Flex Container
+// ------------------------------------
+//  [flex-direction:  <row | row-reverse | column | column-reverse>]
+//  [flex-wrap:       <nowrap | wrap | wrap-reverse>]
+//
+//  @flow:            <‘flex-direction’> || <‘flex-wrap’>
+//  @justify:         <flex-start | flex-end | center | space-between | space-around>
+//  @align-items:     <flex-start | flex-end | center | baseline | stretch>
+//  @align-content:   <flex-start | flex-end | center | space-between | space-around | stretch>
+//
+.flex-container(@flow: row nowrap, @justify: flex-start, @align-items: flex-start, @align-content: flex-start) {
+  display: flex;
+  flex-flow: @flow;
+  justify-content: @justify;
+  align-items: @align-items;
+  align-content: @align-content;
+}
+
+//
+// Flex Item
+// ------------------------------------
+//  [flex-grow:       <integer>]
+//  [flex-shrink:     <integer>]
+//  [flex-basis:      <length>| auto]
+//
+//  @flex:            none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+//
+.flex-item(@flex: 0 1 auto) {
+  flex: @flex;
+}
+
+//
+// Flex Item Order
+// ------------------------------------
+//  @order:           <integer>
+//
+.flex-order(@order) {
+  order: @order;
+}
+
+//
+// Flex Item Align
+// ------------------------------------
+//  @align:           <auto | flex-start | flex-end | center | baseline | stretch>
+//
+.flex-align(@align: flex-start) {
+  align-self: @align;
+}
+
+//=====================================
+// POSITION HELPER
+//=====================================
+.pos (@orient, @x: 0, @y: 0, @type: absolute) {
+  position: @type;
+  .pos-render (@orient, @x, @y);
+}
+.pos (@orient, @top, @right, @bottom, @left, @type: absolute) {
+  position: @type;
+  .pos-render (@orient, @top, @right, @bottom, @left);
+}
+.pos-render (tl, @top:0, @left:0) {
+  top: @top;
+  left: @left;
+}
+.pos-render (tr, @top:0, @right:0) {
+  top: @top;
+  right: @right;
+}
+.pos-render (bl, @bottom:0, @left:0) {
+  bottom: @bottom;
+  left: @left;
+}
+.pos-render (br, @bottom:0, @right:0) {
+  bottom: @bottom;
+  right: @right;
+}
+.pos-render (tb, @top:0, @bottom:0) {
+  top: @top;
+  bottom: @bottom;
+}
+.pos-render (rl, @right:0, @left:0) {
+  right: @right;
+  left: @left;
+}
+.pos-render (all, @top:0, @right:0, @bottom:0, @left:0) {
+  top: @top;
+  right: @right;
+  bottom: @bottom;
+  left: @left;
+}
+
+//=====================================
+// Image Replacement
+//=====================================
+.imgrepl() {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+//=====================================
+// Debug Helper
+//=====================================
+.debug(@color: red, @opacity: 10%, @border: @gray-500) when (@debug = true) {
+  background-color: fade(@color, @opacity);
+  border: @border 1px solid;
+  box-sizing: border-box;
+}
+
+//=====================================
+// Text Ellipsis
+//=====================================
+.ellipsis (@boolean:true) when (@boolean = true) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.ellipsis (@boolean) when (@boolean = false) {
+  white-space: normal;
+  text-overflow: clip;
+}
+
+//=====================================
+// Clearfix
+//=====================================
+.clearfix () {
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+//=====================================
+// Gradient
+//=====================================
+.gradient(@startColor: #eee, @endColor: white) {
+  background-color: @startColor;
+  background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+  background: -webkit-linear-gradient(top, @startColor, @endColor);
+  background: -moz-linear-gradient(top, @startColor, @endColor);
+  background: -ms-linear-gradient(top, @startColor, @endColor);
+  background: -o-linear-gradient(top, @startColor, @endColor);
+}

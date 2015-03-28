@@ -1,0 +1,81 @@
+// ===================================
+// Select
+// ===================================
+.select {
+  cursor: pointer;
+  position: relative;
+
+  &.-opened {
+    z-index: @z-modal;
+    .select-list { display: block; }
+  }
+  &.-disabled {
+    pointer-events: none;
+    .select-list,
+    .select-display:after { display: none; }
+  }
+}
+// Select Label
+// -----------------------------------
+.select-label {
+  .font.small;
+  line-height: @header-height / 2;
+  color: @gray-200;
+  .pos(tl);
+}
+// Select Display
+// -----------------------------------
+.select-display {
+  min-width: 190px;
+  height: @header-height;
+  line-height: @header-height + 10;
+  .font.large;
+  .ellipsis;
+  color: @white;
+  pointer-events: none;
+  position: relative;
+  padding-right: 40px;
+
+  &:after {
+    content: "";
+    border: transparent solid;
+    border-width: 6px 5px;
+    border-top-color: @gray-200;
+    width: 0; height: 0;
+    .pos(tr, 50%, 10px);
+    tranform: translateY(-50%);
+  }
+
+  &.-default { color: @gray-200; }
+}
+// Select Label
+// -----------------------------------
+.select-display-label {
+  height: @header-height;
+  .font.small;
+  color: @gray-500;
+  .pos(tl, 10px, 10px);
+}
+// Select List
+// -----------------------------------
+.select-list {
+  background: fade(@black, 70%);
+  max-height: 200px;
+  .pos(rl, -10px, -10px); top: 100%;
+  overflow-y: auto;
+  display: none;
+  padding: 5px 0;
+}
+// Select List Item
+// -----------------------------------
+.select-list-item {
+  .font.medium;
+  line-height: 40px;
+  color: @gray-100;
+  cursor: pointer;
+  padding: 0 10px;
+
+  &.-default  { opacity: .6; }
+  &.-active   { color: @brow-200; cursor: default; display: none; }
+  &:hover     { background-color: fade(@black, 20%); }
+}

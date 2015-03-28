@@ -1,0 +1,74 @@
+// ===================================
+// DEBUG
+// ===================================
+@debug                    : true;
+// ===================================
+// Size variables
+// ===================================
+//
+@min-width                : 1000px;
+@header-height            : 60px;
+@z-base                   : 0;
+@z-up                     : 10;
+@z-modal                  : 100;
+// ===================================
+// Color Palette
+// ===================================
+//
+// -----------------------------------
+// Base colors
+// -----------------------------------
+//
+@white                    : #fff;
+@black                    : #000;
+@red                      : #9c3c47;
+@gray-200                 : #696969;
+@gray-500                 : #323641;
+@gray-100                 : #c8c8c8;
+@brow-100                 : #4d3d3d;
+@brow-200                 : #3b1b26;
+@brow-300                 : #2c000e;
+// ===================================
+// Transitions
+// ===================================
+@ease: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+.create-animation(@enter_name, @leave_name, @enter, @leave, @enterDur: .5s, @leaveDur: .3s, @easing: @ease) {
+  @keyframes @enter_name { @enter(); }
+  @keyframes @leave_name { @leave(); }
+  &.ng-leave, &.ng-enter.ng-enter-active { animation: @enter_name @enterDur @easing 1; }
+  &.ng-enter, &.ng-leave.ng-leave-active { animation: @leave_name @leaveDur @easing 1; }
+}
+
+.transition() {
+
+  // Generic Animations
+  .basic {
+    .ease(@duration: .5s) {
+      transition: all @ease @duration;
+    }
+    .linear(@duration: .1s) {
+      transition: all linear @duration;
+    }
+  }
+
+  // NG-Animate Animations
+  .ng {
+    .cancel() {
+      &.ng-enter,
+      &.ng-enter-active,
+      &.ng-leave,
+      &.ng-leave-active { transition: none; }
+    }
+    .crossfade(@enter_name: crossfade_enter, @leave_name: crossfade_leave, @enter_time: .5s, @leave_time: .3s) {
+      @enter: { from { opacity: 0; } to { opacity: 1; } };
+      @leave: { from { opacity: 1; } to { opacity: 0; } };
+      .create-animation(@enter_name, @leave_name, @enter, @leave, @enter_time, @leave_time);
+    }
+    .slide(@enter_name: crossfade_enter, @leave_name: crossfade_leave, @enter_time: .5s, @leave_time: .3s) {
+      @enter: { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0px); } };
+      @leave: { from { opacity: 1; transform: translateY(0px); } to { opacity: 0; transform: translateY(-10px); } };
+      .create-animation(@enter_name, @leave_name, @enter, @leave, @enter_time, @leave_time);
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "YoStreet",
+  "version": "2.0.0",
+  "author": "Vicente Lyrio (https://github.com/vicentelyrio)",
+  "private": true,
+  "main": "dist/index.html",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.3",
+    "angular-animate": "~1.3.3",
+    "angular-ui-router": "~0.2.12",
+    "angular-cookies": "~1.3.3",
+    "angular-sanitize": "~1.3.3",
+    "angular-mocks": "~1.3.3",
+    "angular-hotkeys": "chieffancypants/angular-hotkeys#1.4.5",
+    "angular-resource": "~1.3.8"
+  }
+}

@@ -1,0 +1,120 @@
+//
+// -----------------------------------
+// Font Face Mixin
+// -----------------------------------
+//
+.font-face(@fontName, @systemNameA, @systemNameB, @fontPath, @style, @weight) {
+  @font-face {
+    font-family: @fontName;
+    font-style: @style;
+    font-weight: @weight;
+    src: local("@{systemNameA}"), local("@{systemNameB}"), url("@{fontPath}.woff") format("woff");
+  }
+}
+// -----------------------------------
+// Font Family
+// -----------------------------------
+//
+.font-face("Open Sans", "Open Sans", "OpenSans", "fonts/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw", normal, 400);
+.font-face("Open Sans", "Open Sans Italic", "OpenSans-Italic", "fonts/xjAJXh38I15wypJXxuGMBobN6UDyHWBl620a-IRfuBk", italic, 400);
+.font-face("Open Sans", "Open Sans Bold", "OpenSans-Bold", "fonts/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM", normal, 700);
+.font-face("Open Sans", "Open Sans Bold Italic", "OpenSans-BoldItalic", "fonts/PRmiXeptR36kaC0GEAetxjqR_3kx9_hJXbbyU8S6IN0", italic, 700);
+//
+// -----------------------------------
+// Font-size with rem (ref: goo.gl/RryG3D)
+// -----------------------------------
+//
+.fsize(@val) {
+  @remValue: @val;
+  @pxValue: (@val * 10);
+  font-size: ~"@{pxValue}px";
+  font-size: ~"@{remValue}rem";
+}
+// -----------------------------------
+// Font Config
+// -----------------------------------
+//
+.fconfig(@size: 1, @weight: 400, @style: normal) {
+  .fsize(@size);
+  font-weight: @weight;
+  font-style: @style;
+}
+// -----------------------------------
+// Style Config
+// -----------------------------------
+//
+@font-regular: 400;
+@font-bold: 700;
+.styleConfig(@size: 1.1) {
+  .italic()             { .fsize(@size); font-style: italic; }
+  .bold()               { .fsize(@size); font-weight: @font-bold; }
+  .bold-italic()        { .fsize(@size); font-weight: @font-bold; font-style: italic; }
+  .upper()              { .fsize(@size); text-transform: uppercase; }
+  .lower()              { .fsize(@size); text-transform: lowercase; }
+
+  .italic-upper()       { .fsize(@size); text-transform: uppercase; font-style: italic; }
+  .bold-upper()         { .fsize(@size); text-transform: uppercase; font-weight: @font-bold; }
+  .bold-italic-upper()  { .fsize(@size); text-transform: uppercase; font-weight: @font-bold; font-style: italic; }
+
+  .italic-lower()       { .fsize(@size); text-transform: lowercase; font-style: italic; }
+  .bold-lower()         { .fsize(@size); text-transform: lowercase; font-weight: @font-bold; }
+  .bold-italic-lower()  { .fsize(@size); text-transform: lowercase; font-weight: @font-bold; font-style: italic; }
+}
+// -----------------------------------
+// Predefined Styles
+// -----------------------------------
+//
+// Types:
+// - jumbo (77px)
+// - huge (39px)
+// - xxlarge (25px)
+// - xlarge (19px)
+// - large (15px)
+// - medium (13px)
+// - small (11px)
+// - tiny (9px)
+//
+// Variations:
+// - italic
+// - bold
+// - bold-italic
+// - upper
+// - lower
+//
+// - italic-upper
+// - bold-upper
+// - bold-italic-upper
+//
+// - italic-lower
+// - bold-lower
+// - bold-italic-lower
+//
+// Usage:
+//  .font.[type].[variation];
+//
+//  h1 {
+//      .font.xlarge.bold-upper;
+//  }
+//
+@f-huge    : 2.5;
+@f-large   : 2;
+@f-medium  : 1.5;
+@f-small   : 1.2;
+@f-tiny    : 1;
+
+.font {
+  .huge()     { .fsize(@f-huge); }
+  .huge       { .styleConfig(@f-huge); }
+
+  .large()    { .fsize(@f-large); }
+  .large      { .styleConfig(@f-large); }
+
+  .medium()   { .fsize(@f-medium); }
+  .medium     { .styleConfig(@f-medium); }
+
+  .small()    { .fsize(@f-small); }
+  .small      { .styleConfig(@f-small); }
+
+  .tiny()     { .fsize(@f-tiny); }
+  .tiny       { .styleConfig(@f-tiny); }
+}

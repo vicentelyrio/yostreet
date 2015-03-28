@@ -1,0 +1,66 @@
+// Reset everything
+*, *:before, *:after {
+  box-sizing: border-box;
+  cursor: default;
+  margin: 0;
+  outline: 0;
+  user-select: none;
+}
+
+// HIDE GAS OBJECTS
+// Plugins para Bancos (Gás tecnologia)
+object[type^="application/gas-events"] {
+  display: none;
+}
+
+// Document Font settings
+html {
+  font-family: "Open Sans", sans-serif;
+  font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+}
+
+// Document settings
+html, body {
+  background-color: lighten(@gray-500, 10%);
+  min-width: @min-width;
+  color: @white;
+  height: 100%;
+}
+
+// Remove links underline
+a {
+  cursor: pointer;
+  text-decoration: none;
+  * { cursor: pointer; }
+}
+
+// SVG icons
+use {
+  pointer-events: none;
+}
+
+// Reset some Normalize styles
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+figure {
+  margin: 0;
+}
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+  .font.large;
+  font-weight: @font-regular;
+  margin: 0;
+}
+button {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}

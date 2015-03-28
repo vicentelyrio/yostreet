@@ -1,0 +1,69 @@
+// ===================================
+// Login
+// ===================================
+.login {
+  background-color: @gray-500;
+  height: 100%;
+  .flex-container(row nowrap, @align-items: stretch);
+  .flex-item(1 1 auto);
+}
+// Login Form
+// ------------------------------------
+.login-form {
+  background-color: @red;
+  .pos(all, 0, 0, 50%, 0);
+  padding: 20px;
+}
+// Login Field
+// ------------------------------------
+.login-field {
+  width: 300px;
+  .pos(rl);
+  text-align: center;
+  margin: auto;
+
+  &:first-child {
+    bottom: 0;
+  }
+
+  &:last-child {
+    bottom: -70px;
+  }
+
+}
+// Login Input
+// ------------------------------------
+.login-input {
+  background-color: fade(@white, 10%);
+  border: none;
+  width: 100%;
+  .font.small.bold-upper;
+  color: @gray-500;
+  line-height: 35px;
+  height: 35px;
+  display: block;
+
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+::-webkit-input-placeholder { color: fade(@gray-500, 70%); }
+:-moz-placeholder           { color: fade(@gray-500, 70%); }
+::-moz-placeholder          { color: fade(@gray-500, 70%); }
+:-ms-input-placeholder      { color: fade(@gray-500, 70%); }
+
+// Login Button
+// ------------------------------------
+.login-button {
+  background-color: @red;
+  border: none;
+  width: 140px;
+  .font.large.bold-upper;
+  color: @gray-500;
+  line-height: 35px;
+  height: 35px;
+  display: block;
+
+  padding: 0 10px;
+  margin: auto;
+}

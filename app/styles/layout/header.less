@@ -1,0 +1,67 @@
+// Header
+// ===================================
+.header {
+  background-color: @gray-500;
+  height: @header-height;
+  .flex-container(row nowrap, @align-items: stretch, @align-content: center);
+  .flex-item(0 0 @header-height);
+  position: relative;
+  z-index: @z-up;
+
+  .transition.basic.ease;
+
+  &.-animate-off { height: 0; flex-basis: 0; opacity: 0; }
+}
+
+// Header Title
+// -----------------------------------
+.header-title {
+  line-height: @header-height;
+  .font.huge.upper;
+  color: @white;
+  .ellipsis;
+
+  height: @header-height;
+  .flex-item(0 0 auto);
+  padding: 0 @header-height / 2;
+
+  span {
+    color: @red;
+  }
+}
+
+// Header Logout Button
+// -----------------------------------
+.header-logout {
+  border: @red 4px solid;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: relative;
+  .flex-item(0 0 30px);
+  margin: (@header-height / 4) 20px 0;
+
+  &:after {
+    content: "";
+    background-color: @red;
+    border: @gray-500 3px solid;
+    border-radius: 10px;
+    width: 11px;
+    height: 22px;
+    cursor: pointer;
+    .pos(rl); bottom: -11px;
+    margin: auto;
+  }
+}
+// Header Nav
+// -----------------------------------
+.header-nav {
+  .flex-item(1 0 auto);
+  .flex-container(row nowrap, @align-items: center);
+  padding-left: 100px;
+}
+.header-nav-item {
+  .flex-item(0 0 auto);
+  margin-right: 30px;
+}
