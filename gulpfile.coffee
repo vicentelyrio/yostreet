@@ -15,7 +15,6 @@ remember    = require 'gulp-remember'
 cached      = require 'gulp-cached'
 browserSync = require 'browser-sync'
 runSequence = require 'run-sequence'
-lbsdk       = require('gulp-loopback-sdk-angular')
 
 # -------------------------------------------
 # Setup
@@ -92,16 +91,6 @@ stylePipes = ->
     .pipe reload stream: true
 
 # -------------------------------------------
-# Compile SDK
-# -------------------------------------------
-lbServices = ->
-  gulp
-    .src "./server/server.js"
-    .pipe lbsdk()
-    .pipe rename "lb-services.js"
-    .pipe gulp.dest destinations.externals
-
-# -------------------------------------------
 # Gulp Tasks
 # -------------------------------------------
 
@@ -122,9 +111,6 @@ gulp.task 'jade', -> markupPipes gulp.src sources.jadeSrc
 # Styles
 gulp.task 'styles', stylePipes
 
-# SDK
-gulp.task "lbServices", lbServices
-
 # External Libs
 gulp.task "externals", ->
   gulp
@@ -141,9 +127,6 @@ gulp.task "externals", ->
       "bower_components/angular-cookies/angular-cookies.min.js.map"
       "bower_components/angular-resource/angular-resource.min.js"
       "bower_components/angular-resource/angular-resource.min.js.map"
-      "bower_components/ngmap/build/scripts/ng-map.min.js"
-      "app/externals/lb-services.js"
-      "app/externals/gmap.js"
     ]
     .pipe gulp.dest destinations.externals
 

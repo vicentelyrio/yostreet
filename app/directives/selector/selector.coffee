@@ -1,4 +1,4 @@
-angular.module "digimap.app"
+angular.module "yostreet.app"
        .directive "selector", ->
   restrict: "E"
   templateUrl: "directives/selector/selector.html"

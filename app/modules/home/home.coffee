@@ -1,4 +1,4 @@
-angular.module "digimap.app"
+angular.module "yostreet.app"
   .config ($stateProvider) ->
     $stateProvider
       .state "app.home",

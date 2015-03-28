@@ -1,28 +1,7 @@
-angular.module "digimap.app"
-       .controller "InterfaceController", ($rootScope, $scope, $state, User) ->
-
-  # ---------------------------
-  # Get User Info
-  # ---------------------------
-  @getUserInfo = =>
-    success =  (data) ->
-      $scope.user = data
-      $scope.userStatus.logged = true
-      $scope.userStatus.logging = false
-
-    User.getCurrent(success)
+angular.module "yostreet.app"
+       .controller "InterfaceController", ($rootScope, $scope, $state) ->
 
   # ---------------------------
   # Initialize
   # ---------------------------
-  @init = =>
-    $scope.logout = @logout
-
-    $scope.userStatus =
-      logging: false
-      logged: false
-
-    if User.isAuthenticated()
-      @getUserInfo()
-
-  @init()
+  do @init = =>

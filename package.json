@@ -1,12 +1,12 @@
 {
-  "name": "Digimap",
-  "version": "0.0.1",
+  "name": "YoStreet",
+  "version": "2.0.0",
   "author": "Vicente Lyrio (https://github.com/vicentelyrio)",
-  "description": "Digimap App",
+  "description": "YoStreet v2",
   "main": "index.html",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vicentelyrio/Digimap.git"
+    "url": ""
   },
   "license": "ISC",
   "devDependencies": {
@@ -23,7 +23,6 @@
     "gulp-debug": "~1.0.1",
     "gulp-jade": "~0.9.0",
     "gulp-less": "~1.3.6",
-    "gulp-loopback-sdk-angular": "^0.1.3",
     "gulp-minify-css": "~0.3.11",
     "gulp-ng-annotate": "~0.3.4",
     "gulp-nodemon": "~1.0.4",
@@ -48,7 +47,7 @@
   "scripts": {
     "bower": "bower install --allow-root",
     "install": "npm install && npm run bower",
-    "dist": "gulp dist",
+    "build": "gulp dist",
     "start": "gulp serverlocal",
     "test": "npm run compile && npm run test:spec",
     "test:spec": "./node_modules/karma/bin/karma start dist/karma.conf.js"
