@@ -5,3 +5,5 @@ angular.module "yostreet.app"
   # Initialize
   # ---------------------------
   do @init = =>
+
+  return

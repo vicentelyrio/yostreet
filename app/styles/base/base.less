@@ -15,17 +15,22 @@ object[type^="application/gas-events"] {
 
 // Document Font settings
 html {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'OpenSans', Calibri, Arial, sans-serif;
   font-size: 62.5%;
   -webkit-font-smoothing: antialiased;
+  height: 100%;
 }
 
 // Document settings
-html, body {
-  background-color: lighten(@gray-500, 10%);
+body {
+  background-color: @white;
   min-width: @min-width;
-  color: @white;
+  color: @gray-200;
   height: 100%;
+
+  -webkit-font-smoothing: antialiased;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 // Remove links underline

@@ -1,42 +1,11 @@
 //-
 //- Title
 h1.header-title
-  | Digi
-  span
-    | Mapa
+  | YoStreet
 //-
 //- Navigation
 nav.header-nav
-  selector.header-nav-item(
-    ng-if="regionals[0]"
-    item-label="'Regional'"
-    item-list="regionals"
-    item-selected="{}"
-    item-default="'Todos'"
-    on-select="selectRegional")
-  selector.header-nav-item(
-    ng-if="cities[0]"
-    item-label="'Cidade'"
-    item-list="cities"
-    item-selected="{}"
-    item-default="'Todos'"
-    on-select="selectCity")
-  selector.header-nav-item(
-    ng-if="sectors[0]"
-    item-label="'Setor'"
-    item-list="sectors"
-    item-selected="{}"
-    item-default="'Todos'"
-    on-select="selectSector")
-  selector.header-nav-item(
-    ng-if="subsectors[0]"
-    item-label="'Sub-setor'"
-    item-list="subsectors"
-    item-selected="{}"
-    item-default="'Todos'"
-    on-select="selectSubsector")
-
-h4(ng-bind="user.username")
-//-
-//- Logout
-button.header-logout(ng-click="logout()")
+  button.header-nav-link()
+    | Apresentação
+  button.header-nav-link()
+    | Contato
