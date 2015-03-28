@@ -28,6 +28,7 @@ folders     =
 
 sources     =
   appSrc    : path.join folders.app, "app.coffee"
+  modelsSrc : path.join folders.app, "/models/models.coffee"
   coffeeSrc : path.join folders.app, "**/*.coffee"
   jadeSrc   : path.join folders.app, "**/*.jade"
 
@@ -58,6 +59,7 @@ markupPipes = (source) ->
 scriptPipes = ->
   gulp
     .src [
+      sources.modelsSrc
       sources.appSrc
       sources.coffeeSrc
       # Ignored files
@@ -174,8 +176,7 @@ gulp.task 'dist', ['clean'], ->  gulp.start 'build'
 
 gulp.task 'serverlocal', ->
   runSequence(
-    'clean',
-    'build',
+    'dist',
     'serverSync',
     'watch:compile'
   )

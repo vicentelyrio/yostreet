@@ -1,9 +1,5 @@
-angular.module "yostreet.app"
-       .controller "InterfaceController", ($rootScope, $scope, $state) ->
+angular
+  .module "yostreet.app"
+  .controller "InterfaceController", () ->
 
-  # ---------------------------
-  # Initialize
-  # ---------------------------
-  do @init = =>
-
-  return
+    # do @init = =>

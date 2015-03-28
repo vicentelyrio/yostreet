@@ -1,0 +1,7 @@
+ul.gallery(
+  ng-if="!hc.gallery.loading")
+  li.gallery-photo(ng-repeat="photo in hc.gallery.photos")
+    img.gallery-photo-image(src="{{photo.image}}")
+    h3.gallery-photo-title(ng-bind="photo.title")
+.loader(
+  ng-if="hc.gallery.loading")

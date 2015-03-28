@@ -3,11 +3,9 @@
 .header {
   height: @header-height;
   .flex-container(row nowrap, @align-items: flex-end, @align-content: stretch);
-  .flex-item(0 0 @header-height);
   position: relative;
   padding: 0 100px;
   z-index: @z-up;
-  .transition.basic.ease;
 
   &.-animate-off { height: 0; flex-basis: 0; opacity: 0; }
 }

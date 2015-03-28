@@ -1,14 +1,12 @@
 angular.module "yostreet.app"
   .config ($stateProvider) ->
     $stateProvider
-      .state "app.home",
-        url: "/home"
-        private: true
+      .state "app.bio",
+        url: "/bio"
         views:
-
           "":
-            controller: "HomeController as hc"
-            templateUrl: "modules/home/home.html"
+            controller: "BioController as bc"
+            templateUrl: "modules/bio/bio.html"
 
           "header":
             controller: "HeaderController as hl"

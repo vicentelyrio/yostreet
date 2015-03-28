@@ -1,4 +1,14 @@
-angular.module "yostreet.app", ["ngSanitize", "ui.router",  "ngCookies", "ngAnimate", "cfp.hotkeys", "ngResource"]
+angular
+  .module "yostreet.app", [
+    "ngSanitize"
+    "ui.router"
+    "ngCookies"
+    "ngAnimate"
+    "cfp.hotkeys"
+    "ngResource"
+
+    "yostreet.models"
+  ]
   .config ($stateProvider, $urlRouterProvider, hotkeysProvider, $httpProvider) ->
 
     # HotKeys Config (TODO: Implement this)
