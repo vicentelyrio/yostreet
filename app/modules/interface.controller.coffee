@@ -1,5 +1,7 @@
 angular
   .module "yostreet.app"
-  .controller "InterfaceController", () ->
+  .controller "InterfaceController", ->
 
-    # do @init = =>
+    # Initialize
+    # ---------------------------
+    do @init = =>

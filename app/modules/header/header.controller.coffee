@@ -1,7 +1,7 @@
-angular.module "yostreet.app"
-       .controller "HeaderController", ($rootScope, $scope, $state) ->
+angular
+  .module "yostreet.app"
+  .controller "HeaderController", ($rootScope, $scope, $state) ->
 
-  # ---------------------------
-  # Initialize
-  # ---------------------------
-  do @init = =>
+    # Initialize
+    # ---------------------------
+    do @init = =>

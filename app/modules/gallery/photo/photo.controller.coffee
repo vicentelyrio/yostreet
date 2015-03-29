@@ -3,7 +3,6 @@ angular
   .controller "GalleryPhotoController", ($rootScope, $state, Flickr, Albums) ->
 
     @getPhoto = (id) =>
-      console.log $rootScope.gallery
       @photo = ($rootScope.gallery.photos.filter (obj) -> obj.id is id)[0]
 
     @getAlbums = =>
