@@ -12,8 +12,8 @@ angular.module "yostreet.app"
         templateUrl: "modules/gallery/list/list.html"
         activePage: "gallery"
 
-      .state "app.gallery.details",
-        url: "/details/:id"
+      .state "app.gallery.photo",
+        url: "/photo/:id"
         activePage: "gallery"
-        controller: "GalleryDetailsController as dc"
-        templateUrl: "modules/gallery/details/details.html"
+        controller: "GalleryPhotoController as pc"
+        templateUrl: "modules/gallery/photo/photo.html"
