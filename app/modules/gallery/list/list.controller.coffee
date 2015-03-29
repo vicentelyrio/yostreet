@@ -1,6 +1,9 @@
 angular
   .module "yostreet.app"
-  .controller "HomeController", (Flickr) ->
+  .controller "GalleryListController", ($state, Flickr) ->
+
+    @showPhotos = (photo) =>
+      $state.go "app.gallery.details", {id: photo.id}
 
     @getAlbums = =>
       @gallery.loading = true

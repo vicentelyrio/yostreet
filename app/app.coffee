@@ -15,7 +15,7 @@ angular
     hotkeysProvider.includeCheatSheet = false
 
     # Base URL
-    $urlRouterProvider.otherwise "/home"
+    $urlRouterProvider.otherwise "/gallery"
 
     # Set StateProvider
     $stateProvider
