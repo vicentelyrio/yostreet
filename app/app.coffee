@@ -2,10 +2,10 @@ angular
   .module "yostreet.app", [
     "ngSanitize"
     "ui.router"
-    "ngCookies"
     "ngAnimate"
     "cfp.hotkeys"
     "ngResource"
+    "wu.masonry"
 
     "yostreet.models"
   ]

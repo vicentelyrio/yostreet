@@ -1,9 +1,8 @@
 ul.gallery(
+  masonry="{columnWidth: 5, 'isFitWidth': true}"
   ng-if="!gallery.loading")
-  li.gallery-photo(
+  li.gallery-photo.masonry-brick(
     ng-repeat="photo in gallery.photos"
     ng-click="gc.showPhoto(photo)")
     img.gallery-photo-image(ng-src="{{photo.thumb}}")
     h3.gallery-photo-title(ng-bind="photo.title")
-.loader(
-  ng-if="gallery.loading")

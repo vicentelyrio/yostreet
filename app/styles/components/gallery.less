@@ -1,14 +1,11 @@
 .gallery {
   position: relative;
   .flex-container(row wrap);
-  padding: 30px 100px;
+  padding: 20px;
 }
 .gallery-photo {
-  background-color: @gray-100;
   position: relative;
-  box-sizing: border-box;
-  .flex-item(0 0 auto);
-  padding: 10px;
+  overflow: hidden;
   margin: 10px;
 
   &:hover {
@@ -21,8 +18,9 @@
 
   &:before {
     content: "";
-    background-color: fade(@black, 70%);
-    .pos(all, 10px, 10px, 10px, 10px);
+    border: 10px solid fade(@black, 40%);
+    background-color: fade(@black, 60%);
+    .pos(all);
     z-index: 1;
     opacity: 0;
     .transition.basic.ease;
@@ -41,5 +39,6 @@
   opacity: 0;
 }
 .gallery-photo-image {
-  max-width: 100%;
+  max-width: 300px;
+  max-height: 300px;
 }

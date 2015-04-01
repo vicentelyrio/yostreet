@@ -59,12 +59,12 @@ markupPipes = (source) ->
 scriptPipes = ->
   gulp
     .src [
-      sources.modelsSrc
-      sources.appSrc
-      sources.coffeeSrc
       # Ignored files
       '!./app/karma.conf.coffee'
       '!./app/**/*.spec.coffee'
+      sources.modelsSrc
+      sources.appSrc
+      sources.coffeeSrc
     ]
     .pipe plumber()
     .pipe cached()
@@ -117,18 +117,16 @@ gulp.task 'styles', stylePipes
 gulp.task "externals", ->
   gulp
     .src [
+      "bower_components/jquery/dist/jquery.min.js"
+      "bower_components/masonry/dist/masonry.pkgd.min.js"
+      "bower_components/imagesloaded/imagesloaded.pkgd.min.js"
       "bower_components/angular/angular.min.js"
-      "bower_components/angular/angular.min.js.map"
-      "bower_components/angular-animate/angular-animate.min.js"
-      "bower_components/angular-animate/angular-animate.min.js.map"
       "bower_components/angular-ui-router/release/angular-ui-router.min.js"
-      "bower_components/angular-sanitize/angular-sanitize.min.js"
-      "bower_components/angular-sanitize/angular-sanitize.min.js.map"
-      "bower_components/angular-hotkeys/build/hotkeys.min.js"
-      "bower_components/angular-cookies/angular-cookies.min.js"
-      "bower_components/angular-cookies/angular-cookies.min.js.map"
       "bower_components/angular-resource/angular-resource.min.js"
-      "bower_components/angular-resource/angular-resource.min.js.map"
+      "bower_components/angular-sanitize/angular-sanitize.min.js"
+      "bower_components/angular-animate/angular-animate.min.js"
+      "bower_components/angular-hotkeys/build/hotkeys.min.js"
+      "bower_components/angular-masonry/angular-masonry.js"
     ]
     .pipe gulp.dest destinations.externals
 
