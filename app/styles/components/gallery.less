@@ -2,8 +2,12 @@
   position: relative;
   .flex-container(row wrap);
   padding: 20px;
+  margin: auto;
 }
 .gallery-photo {
+  max-width: 260px;
+  max-height: 260px;
+  min-width: 260px;
   position: relative;
   overflow: hidden;
   margin: 10px;
@@ -35,10 +39,17 @@
   margin: auto;
   z-index: 2;
   transform: translateY(-50%);
-  .transition.basic.ease;
   opacity: 0;
+  .transition.basic.ease;
 }
 .gallery-photo-image {
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 100%;
+  height: auto;
+  opacity: 0;
+  .transition.basic.ease;
+  transition-delay: .1s;
+
+  .loaded & {
+    opacity: 1;
+  }
 }

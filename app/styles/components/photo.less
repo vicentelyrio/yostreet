@@ -1,0 +1,58 @@
+.photo-container {
+  position: realtive;
+  .flex-item(1 1 auto);
+  .flex-container(column nowrap, @align-items: stretch, @justify: stretch);
+}
+.photo {
+  .flex-item(1 1 auto);
+  .flex-container(column nowrap, @align-items: stretch, @justify: stretch);
+}
+.photo-title {
+  background-color: fade(@gray-400, 96%);
+  height: 70px;
+  .pos(rl, 0, 0, fixed); bottom: 0;
+  z-index: @z-up;
+
+  .font.large;
+  line-height: 70px;
+  text-align: center;
+}
+.photo-image {
+  .flex-item(1 1 auto);
+  display: block;
+  margin: auto;
+}
+.photo-button {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  .pos(all, 0, 0, 0, 0, fixed);
+  z-index: @z-base + 1;
+  .transition.basic.ease;
+  cursor: pointer;
+  margin: auto;
+
+  &:before {
+    content: "";
+    border: solid fade(@black, 20%);
+    width: 100px;
+    height: 100px;
+    transform: rotate(45deg);
+    .pos(all);
+    .transition.basic.ease;
+    cursor: pointer;
+    margin: auto;
+  }
+
+  &:hover:before { border-color: fade(@black, 30%); }
+  &.-back {
+    right: auto; left: 50px;
+    &:before { border-width: 0  0 20px 20px; left: 20%; }
+    &:hover { box-shadow: inset fade(@black, 10%) 5px 0 15px; }
+  }
+  &.-next {
+    left: auto; right: 50px;
+    &:before { border-width: 20px 20px 0  0; }
+    &:hover { box-shadow: inset fade(@black, 10%) -5px 0 15px; }
+  }
+}

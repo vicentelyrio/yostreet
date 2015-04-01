@@ -23,7 +23,7 @@ html {
 
 // Document settings
 body {
-  background-color: lighten(@black, 10%);
+  background-color: @gray-400;
   min-width: @min-width;
   color: @gray-200;
   height: 100%;
@@ -68,4 +68,13 @@ button {
   border: 0;
   padding: 0;
   cursor: pointer;
+}
+.container {
+  .flex-container(row nowrap, @align-items: stretch, @justify: stretch);
+  min-height: 100%;
+  padding: @header-height 0;
+}
+.content {
+  .flex-container(row nowrap, @align-items: center, @justify: center);
+  .flex-item(1 1 auto);
 }

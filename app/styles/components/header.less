@@ -1,9 +1,10 @@
 // Header
 // ===================================
 .header {
+  background-color: fade(@gray-400, 96%);
   height: @header-height;
-  .flex-container(row nowrap, @align-items: flex-end, @align-content: stretch);
-  position: relative;
+  .flex-container(row nowrap, @align-items: center, @align-content: stretch);
+  .pos(rl, 0, 0, fixed); top: 0;
   padding: 0 100px;
   z-index: @z-up;
 
