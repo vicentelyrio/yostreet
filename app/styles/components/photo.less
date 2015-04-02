@@ -5,7 +5,7 @@
 }
 .photo {
   .flex-item(1 1 auto);
-  .flex-container(column nowrap, @align-items: stretch, @justify: stretch);
+  .flex-container(column nowrap, @align-items: center, @justify: stretch);
 }
 .photo-title {
   background-color: fade(@gray-400, 96%);
@@ -19,8 +19,11 @@
 }
 .photo-image {
   .flex-item(1 1 auto);
-  display: block;
-  margin: auto;
+  .flex-container(column nowrap, @align-items: center, @justify: center);
+  img {
+    .transition.ng.crossfade;
+    .flex-item(0 1 auto);
+  }
 }
 .photo-button {
   width: 200px;

@@ -2,8 +2,6 @@
   ng-if="pc.photo")
   .photo
     h3.photo-title(ng-bind="pc.photo.title")
-    img.photo-image(ng-src="{{pc.photo.image}}")
+    preloader.photo-image(image="pc.photo.image")
   button.photo-button.-back(ng-click="pc.changeImage(false)")
   button.photo-button.-next(ng-click="pc.changeImage(true)")
-.loader(
-  ng-if="!pc.photo")
