@@ -40,14 +40,14 @@
   z-index: 2;
   transform: translateY(-50%);
   opacity: 0;
-  .transition.basic.ease;
 }
 .gallery-photo-image {
   max-width: 100%;
   height: auto;
   opacity: 0;
-  .transition.basic.ease;
-  transition-delay: .1s;
+  .transition.basic.linear(1s);
+  transition-property: opacity;
+  transition-delay: .5s;
 
   .loaded & {
     opacity: 1;

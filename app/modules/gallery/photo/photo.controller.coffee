@@ -11,10 +11,19 @@ angular
         .then (data) ->
           $rootScope.gallery = Albums.parse(data)
 
+    @boundaries = (id, max, min) =>
+      console.log id, max, min
+      return max if id < min
+      return min if id > max
+      return id
+
     @changeImage = (next) =>
-      @idx = $rootScope.gallery.photos.indexOf @photo
+      list = $rootScope.gallery.photos
+      @idx = list.indexOf @photo
       if next then @idx++ else @idx--
-      id = $rootScope.gallery.photos[@idx].id
+      @idx = @boundaries @idx, list.length - 1, 0
+      console.log @idx
+      id = list[@idx].id
       $state.go "app.gallery.photo", { id:id }
 
     do @init = =>

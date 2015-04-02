@@ -1,6 +1,6 @@
 angular
   .module "yostreet.app"
-  .controller "GalleryListController", ($rootScope, $state, Flickr, Albums) ->
+  .controller "GalleryListController", ($rootScope, $state, $timeout, Flickr, Albums) ->
 
     @showPhoto = (photo) =>
       $state.go "app.gallery.photo", { id: photo.id }
